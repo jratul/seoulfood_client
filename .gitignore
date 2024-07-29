@@ -167,3 +167,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# mkcert
+localhost-key.pem
+localhost.pem
+server.js

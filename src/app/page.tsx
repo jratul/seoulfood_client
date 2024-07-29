@@ -3,13 +3,18 @@ import { FoodData } from "@/types/food.types";
 import FoodCard from "@/components/main/FoodCard";
 
 async function getFoodsData() {
-  const res = await fetch(`${process.env.SERVER_URL}/foods`);
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/foods`);
 
-  if (!res.ok) {
+    if (!res.ok) {
+      return [];
+    }
+
+    return res.json();
+  } catch (error) {
+    console.log("error : ", error);
     return [];
   }
-
-  return res.json();
 }
 
 export default async function Home() {
@@ -17,7 +22,7 @@ export default async function Home() {
 
   return (
     <>
-      <Typography variant="h5" color="primary.dark">
+      <Typography variant="h5" color="primary.dark" marginY={2}>
         전체 음식
       </Typography>
       <Grid container spacing={2}>

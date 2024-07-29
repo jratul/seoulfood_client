@@ -5,8 +5,16 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../theme";
 import { GlobalStyle } from "../styles/global-styles";
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Seoul Food",
+  icons: {
+    icon: "/seoul-food-title-logo.png",
+  },
+};
 
 export default function RootLayout({
   children,

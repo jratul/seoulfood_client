@@ -17,7 +17,7 @@ export default async function Home() {
 
   return (
     <>
-      <Typography variant="h4" color="primary.dark">
+      <Typography variant="h5" color="primary.dark">
         전체 음식
       </Typography>
       <Grid container spacing={2}>
